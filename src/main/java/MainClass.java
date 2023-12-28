@@ -1,7 +1,4 @@
-import Model.Booking;
-import Model.Guest;
-import Model.Room;
-import Model.RoomType;
+import Model.*;
 import Repository.DB_Manager;
 
 import java.time.LocalDate;
@@ -10,18 +7,27 @@ public class MainClass {
     public static void main(String[] args) {
         DB_Manager db = new DB_Manager();
 
+        Hotel hotel1 = new Hotel();
+        hotel1.setHotelName("My hotel1");
+        hotel1.setLocation("tehran");
+        hotel1.setRating("10/10");
+        hotel1.setYearsOfWork("10 years");
+
         //saving rooms
         Room room1 = new Room();
         room1.setLabel("A1");
         room1.setRoomType(RoomType.STANDARD);
+        room1.setHotel(hotel1);
 
         Room room2 = new Room();
         room2.setLabel("A2");
         room2.setRoomType(RoomType.DELUXE);
+        room2.setHotel(hotel1);
 
         Room room3 = new Room();
         room3.setLabel("B1");
         room3.setRoomType(RoomType.STANDARD);
+        room3.setHotel(hotel1);
 
         Guest guest1 = new Guest();
         guest1.setFullName("ali ahmadi");
@@ -45,11 +51,11 @@ public class MainClass {
         booking1.setCheckInDate(now);
         booking1.setCheckOutDate(now.plusDays(3));
 
+        db.save(hotel1);
 
         db.save(room1);
         db.save(room2);
         db.save(room3);
-
 
         db.save(guest1);
         db.save(guest2);
