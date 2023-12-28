@@ -23,6 +23,9 @@ public class MainClass {
         Guest guest2 = new Guest();
         guest2.setFullName("akbar abdi");
 
+        Guest guest3 = new Guest();
+        guest3.setFullName("amin kahram");
+
         Booking booking1 = new Booking();
         booking1.setGuest(guest1);
         booking1.setRoom(room3);
@@ -35,6 +38,7 @@ public class MainClass {
 
         db.save(guest1);
         db.save(guest2);
+        db.save(guest3);
 
         db.save(booking1);
     }
