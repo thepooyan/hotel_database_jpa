@@ -18,6 +18,6 @@ public class Guest implements Model {
         @Column(nullable = false)
         private String fullName;
 
-        @OneToMany
+        @OneToMany(mappedBy = "guest")
         private List<Booking> bookings = new ArrayList();
 }
