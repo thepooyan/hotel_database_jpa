@@ -1,33 +1,24 @@
-import dao.CourseDao;
-import dao.TeacherDao;
-import domainModel.Course;
-import domainModel.Teacher;
+import Model.Room;
+import dao.CrudDao;
+import dao.CrudDaoImpl;
 
 public class MainClass {
     public static void main(String[] args) {
-        Teacher teacher1 = new Teacher();
-        teacher1.setTeacherName("Ali");
+        CrudDao cd = new CrudDaoImpl<Room, Integer>();
 
-        Teacher teacher2 = new Teacher();
-        teacher2.setTeacherName("Pooyan");
+        //saving rooms
+        Room room1 = new Room();
+        room1.setLabel("A1");
 
-        TeacherDao td = new TeacherDao();
+        Room room2 = new Room();
+        room2.setLabel("A2");
 
-        Course course1 = new Course();
-        course1.setCourseName("Math");
+        Room room3 = new Room();
+        room3.setLabel("B1");
 
-        Course course2 = new Course();
-        course2.setCourseName("Physics");
 
-        teacher1.getCourses().add(course1);
-        teacher1.getCourses().add(course2);
-
-        CourseDao cd = new CourseDao();
-        cd.save(course1);
-        cd.save(course2);
-
-        td.save(teacher1);
-        td.save(teacher2);
-
+        cd.save(room1);
+        cd.save(room2);
+        cd.save(room3);
     }
 }
