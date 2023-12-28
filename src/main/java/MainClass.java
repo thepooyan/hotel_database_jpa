@@ -1,6 +1,7 @@
 import Model.Booking;
 import Model.Guest;
 import Model.Room;
+import Model.RoomType;
 import Repository.DB_Manager;
 
 public class MainClass {
@@ -10,12 +11,15 @@ public class MainClass {
         //saving rooms
         Room room1 = new Room();
         room1.setLabel("A1");
+        room1.setRoomType(RoomType.STANDARD);
 
         Room room2 = new Room();
         room2.setLabel("A2");
+        room2.setRoomType(RoomType.DELUXE);
 
         Room room3 = new Room();
         room3.setLabel("B1");
+        room3.setRoomType(RoomType.STANDARD);
 
         Guest guest1 = new Guest();
         guest1.setFullName("ali ahmadi");

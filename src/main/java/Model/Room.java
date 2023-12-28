@@ -17,6 +17,7 @@ public class Room implements Model {
 
         @Column(nullable = false)
         private String label;
+        private RoomType roomType;
 
         @OneToMany(mappedBy = "room", cascade = CascadeType.ALL)
         private List<Booking> bookings = new ArrayList<>();
