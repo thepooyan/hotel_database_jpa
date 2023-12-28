@@ -10,19 +10,14 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Data
-public class Room implements Model {
+public class Hotel implements Model {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
 
         @Column(nullable = false)
-        private String label;
-        private RoomType roomType;
+        private String hotelName;
 
-        @OneToMany(mappedBy = "room", cascade = CascadeType.ALL)
-        private List<Booking> bookings = new ArrayList<>();
-
-        @ManyToOne
-        @JoinColumn(name = "hotel_id")
-        private Hotel hotel;
+        @OneToMany(mappedBy = "hotel")
+        List<Room> rooms = new ArrayList<>();
 }
