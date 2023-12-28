@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Data
-public class Booking {
+public class Booking implements Model {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;

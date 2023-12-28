@@ -1,19 +1,16 @@
 package Repository;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.EntityTransaction;
-import jakarta.persistence.Persistence;
+import Model.Model;
+import jakarta.persistence.*;
 
-public class CrudDaoImpl<T, ID> {
+public class DB_Manager {
     EntityManagerFactory factory = Persistence.createEntityManagerFactory("pu1");
-    public T save(T entity) {
+    public void save(Model entity) {
         EntityManager em = factory.createEntityManager();
         EntityTransaction tr = em.getTransaction();
         tr.begin();
         em.persist(entity);
         tr.commit();
         em.close();
-        return entity;
     }
 }

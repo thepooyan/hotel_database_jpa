@@ -3,7 +3,6 @@ package Model;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.envers.AuditMappedBy;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +10,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Data
-public class Guest {
+public class Guest implements Model {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
