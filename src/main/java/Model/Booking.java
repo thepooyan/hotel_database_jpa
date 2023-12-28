@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+
 @NoArgsConstructor
 @Entity
 @Data
@@ -12,6 +14,8 @@ public class Booking implements Model {
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
 
+        private LocalDate checkInDate;
+        private LocalDate checkOutDate;
 
         @ManyToOne
         @JoinColumn(name = "room_id")

@@ -17,6 +17,9 @@ public class Guest implements Model {
 
         @Column(nullable = false)
         private String fullName;
+        private String email;
+        @Column(length = 20)
+        private String mobileNumber;
 
         @OneToMany(mappedBy = "guest")
         private List<Booking> bookings = new ArrayList();

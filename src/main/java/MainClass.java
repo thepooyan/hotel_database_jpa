@@ -4,6 +4,8 @@ import Model.Room;
 import Model.RoomType;
 import Repository.DB_Manager;
 
+import java.time.LocalDate;
+
 public class MainClass {
     public static void main(String[] args) {
         DB_Manager db = new DB_Manager();
@@ -23,16 +25,25 @@ public class MainClass {
 
         Guest guest1 = new Guest();
         guest1.setFullName("ali ahmadi");
+        guest1.setEmail("example@gmail.com");
+        guest1.setMobileNumber("09027788994");
 
         Guest guest2 = new Guest();
         guest2.setFullName("akbar abdi");
+        guest2.setEmail("example@gmail.com");
+        guest2.setMobileNumber("09027788994");
 
         Guest guest3 = new Guest();
         guest3.setFullName("amin kahram");
+        guest3.setEmail("example@gmail.com");
+        guest3.setMobileNumber("09027788994");
 
         Booking booking1 = new Booking();
         booking1.setGuest(guest1);
         booking1.setRoom(room3);
+        LocalDate now = LocalDate.now();
+        booking1.setCheckInDate(now);
+        booking1.setCheckOutDate(now.plusDays(3));
 
 
         db.save(room1);
